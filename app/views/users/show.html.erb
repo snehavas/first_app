@@ -8,10 +8,17 @@
   <%=h @user.role %>
 </p>
 
-<p>
-  <b>Pair:</b>
-  <%=h @user.user_id %>
-</p>
+
+<h2>Friends</h2>
+<ul>
+<% for user in @user.friends %>
+   <li>
+     <%=h user.name %>
+      </li>
+
+ <% end %>
+</ul>
+
 
 
 
