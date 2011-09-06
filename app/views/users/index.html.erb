@@ -6,16 +6,18 @@
     <th>Role</th>
   </tr>
 
+  <td><%= link_to 'Show', User.find(@logged_in) %></td>
+
 <% @users.each do |user| %>
   <tr>
     <td><%=h user.name %></td>
     <td><%=h user.role %></td>
-    <td>  <%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post %> </td>
+    <td>  <%= link_to "Add Pair", friendships_path(:friend_id => user), :method => :post %> </td>
 
 
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+  <!--  <td><!%= link_to 'Show', user %></td>
+    <td><!%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><!%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>-->
   </tr>
 <% end %>
 </table>

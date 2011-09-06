@@ -9,11 +9,15 @@
 </p>
 
 
-<h2>Friends</h2>
+<h2>Pairs</h2>
+
+
 <ul>
-<% for user in @user.friends %>
+<% for user in @user.friendships %>
    <li>
-     <%=h user.name %>
+     <%=h User.find(user.friend_id).name %>
+      <%=h User.find(user.friend_id).created_at %>
+
       </li>
 
  <% end %>
