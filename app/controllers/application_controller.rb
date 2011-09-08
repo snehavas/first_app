@@ -11,6 +11,6 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
 
   def initialize
-    @logged_in = "2"
+    @logged_in = "1"
   end
 end

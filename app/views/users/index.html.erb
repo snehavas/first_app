@@ -1,12 +1,12 @@
-<h1>Listing users</h1>
 
 <table>
   <tr>
     <th>Name</th>
     <th>Role</th>
   </tr>
+  <h4>Logged is as <%=User.find(@logged_in).name%></h4>
+  <td><h2><%= link_to 'Show', User.find(@logged_in) %></h2></td>
 
-  <td><%= link_to 'Show', User.find(@logged_in) %></td>
 
 <% @users.each do |user| %>
   <tr>
