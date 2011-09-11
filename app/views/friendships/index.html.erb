@@ -1,0 +1,11 @@
+
+<table>
+
+<% @friendships.each do |friendship| %>
+  <tr>
+    <td><%=h friendship.user_id %></td>
+    <td><%=h friendship.friend_id %></td>
+  </tr>
+<% end %>
+
+</table>

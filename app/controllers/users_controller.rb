@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   # GET /users.xml
   def index
     @users = User.all
+    @users.delete(User.find)
 
     respond_to do |format|
       format.html # index.html.erb

@@ -1,25 +1,21 @@
 
 <table>
-  <tr>
+
+  <h4>Logged in as <%=User.find(@logged_in).name%></h4>
+  <td><%= link_to 'Show All', User.find(@logged_in) %><h2><!%= link_to 'Show', friendships_path %></h2></td>
+<tr>
     <th>Name</th>
     <th>Role</th>
   </tr>
-  <h4>Logged is as <%=User.find(@logged_in).name%></h4>
-  <td><h2><%= link_to 'Show', User.find(@logged_in) %></h2></td>
+  <% @users.each do |user| %>
+      <tr>
+        <td><%=h user.name %></td>
+        <td><%=h user.role %></td>
+        <td>  <%= link_to "Add Pair", friendships_path(:friend_id => user), :method => :post %> </td>
+        <td>  <%= link_to "View Status", friendship_path(user) %> </td>
 
-
-<% @users.each do |user| %>
-  <tr>
-    <td><%=h user.name %></td>
-    <td><%=h user.role %></td>
-    <td>  <%= link_to "Add Pair", friendships_path(:friend_id => user), :method => :post %> </td>
-
-
-  <!--  <td><!%= link_to 'Show', user %></td>
-    <td><!%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><!%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>-->
-  </tr>
-<% end %>
+      </tr>
+  <% end %>
 </table>
 
 <br />

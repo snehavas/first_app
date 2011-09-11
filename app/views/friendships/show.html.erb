@@ -1,0 +1,14 @@
+
+
+<h4>Total Count:<%= @friendships1.count %></h4>
+<table>
+  <tr><td><h3>Pair</h3></td><td><h3>Date of pairing</h3></td></tr>
+  <% for friend in @friendships1 %>
+      <tr>
+        <td> <%=h User.find(friend.friend_id).name %> </td>
+        <td> <%=h friend.created_at %> </td>
+
+      </tr>
+
+  <% end %>
+</table>
